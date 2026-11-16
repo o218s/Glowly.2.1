@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Glowly — Skincare inteligente, beleza consciente e cuidados personalizados para a tua pele.">
+
+    <title>Glowly | Skincare & Beauty</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <a href="#inicio" class="logo">
+        Glowly<span>.</span>
+    </a>
+
+    <nav class="navigation" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#como">A nossa filosofia</a>
+        <a href="#assistente">Assistente IA</a>
+        <a href="#sobre">Sobre nós</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <a href="#conta" class="account-link">
+            <i data-lucide="user-round"></i>
+            <span>A minha conta</span>
+        </a>
+
+        <button class="header-cart" id="openCart" aria-label="Abrir carrinho">
+            <i data-lucide="shopping-bag"></i>
+            <span id="cartCount">0</span>
+        </button>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir menu">
+            <i data-lucide="menu"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">SKINCARE INTELIGENTE · BELEZA CONSCIENTE</span>
+
+        <h1>
+            A tua pele.<br>
+            A tua essência.<br>
+            <span>A tua melhor versão.</span>
+        </h1>
+
+        <p>
+            Descobre uma nova forma de cuidar de ti.
+            Uma experiência personalizada que une tecnologia,
+            ciência e beleza para revelar o melhor da tua pele.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn" onclick="document.getElementById('foto').click()">
+                Descobrir a minha pele
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+            <a href="#produtos" class="secondary-btn">
+                Explorar produtos
+            </a>
+
+        </div>
+
+        <input
+            type="file"
+            id="foto"
+            accept="image/*"
+            hidden
+            onchange="selecionarFoto(event)"
+        >
+
+        <p id="resultado-foto" aria-live="polite"></p>
+
+        <div class="hero-benefits">
+            <span><i data-lucide="scan-face"></i> Análise personalizada</span>
+            <span><i data-lucide="sparkles"></i> Cuidados inteligentes</span>
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        <img
+            src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=1000"
+            alt="Produtos de skincare numa composição minimalista"
+        >
+
+        <div class="image-caption">
+            <span>GLOWLY EXPERIENCE</span>
+            <p>Beleza que começa em ti.</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- FILOSOFIA -->
+
+<section class="philosophy" id="como">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">UMA NOVA FORMA DE CUIDAR</span>
+
+        <h2>O cuidado certo faz toda a diferença.</h2>
+
+        <p>
+            Acreditamos que cada pele é única.
+            Por isso, criámos uma experiência que coloca
+            as tuas necessidades no centro de tudo.
+        </p>
+
+    </div>
+
+    <div class="steps">
+
+        <article class="step">
+            <span class="step-number">01</span>
+            <i data-lucide="camera"></i>
+            <h3>Descobre a tua pele</h3>
+            <p>Partilha uma fotografia e inicia a tua experiência personalizada.</p>
+        </article>
+
+        <article class="step">
+            <span class="step-number">02</span>
+            <i data-lucide="scan-face"></i>
+            <h3>Análise inteligente</h3>
+            <p>Conhece melhor as características e necessidades da tua pele.</p>
+        </article>
+
+        <article class="step">
+            <span class="step-number">03</span>
+            <i data-lucide="clipboard-list"></i>
+            <h3>A tua rotina</h3>
+            <p>Recebe sugestões de cuidados adaptadas ao teu perfil.</p>
+        </article>
+
+        <article class="step">
+            <span class="step-number">04</span>
+            <i data-lucide="heart"></i>
+            <h3>Acompanha a evolução</h3>
+            <p>Guarda o teu perfil e acompanha a tua rotina.</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUTOS -->
+
+<section class="products" id="produtos">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">A NOSSA SELEÇÃO</span>
+
+        <h2>Essenciais para a tua pele.</h2>
+
+        <p>
+            Produtos selecionados para transformar
+            a tua rotina num momento de cuidado.
+        </p>
+
+    </div>
+
+    <div class="product-grid">
+
+        <article class="product">
+
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600" alt="Gel de limpeza facial" loading="lazy">
+                <span class="product-category">LIMPEZA</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Gel de Limpeza Facial</h3>
+                <p>Limpeza suave para uma pele fresca e equilibrada.</p>
+
+                <div class="product-bottom">
+                    <strong>14,90 €</strong>
+                    <button data-add-cart data-id="gel-limpeza" data-name="Gel de Limpeza Facial" data-price="14.90" aria-label="Adicionar Gel de Limpeza ao carrinho">
+                        <i data-lucide="plus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="product">
+
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600" alt="Sérum facial" loading="lazy">
+                <span class="product-category">TRATAMENTO</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Sérum Anti-Imperfeições</h3>
+                <p>Um cuidado direcionado para uma pele equilibrada.</p>
+
+                <div class="product-bottom">
+                    <strong>22,90 €</strong>
+                    <button data-add-cart data-id="serum" data-name="Sérum Anti-Imperfeições" data-price="22.90" aria-label="Adicionar Sérum ao carrinho">
+                        <i data-lucide="plus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="product">
+
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1601612628452-9e99ced43524?w=600" alt="Creme hidratante" loading="lazy">
+                <span class="product-category">HIDRATAÇÃO</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Creme Hidratante Leve</h3>
+                <p>Hidratação e conforto para a barreira da pele.</p>
+
+                <div class="product-bottom">
+                    <strong>18,90 €</strong>
+                    <button data-add-cart data-id="creme-hidratante" data-name="Creme Hidratante Leve" data-price="18.90" aria-label="Adicionar Creme ao carrinho">
+                        <i data-lucide="plus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="product">
+
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600" alt="Protetor solar" loading="lazy">
+                <span class="product-category">PROTEÇÃO</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Protetor Solar FPS 50+</h3>
+                <p>Proteção diária para cuidar da tua pele.</p>
+
+                <div class="product-bottom">
+                    <strong>16,90 €</strong>
+                    <button data-add-cart data-id="protetor-solar" data-name="Protetor Solar FPS 50+" data-price="16.90" aria-label="Adicionar Protetor Solar ao carrinho">
+                        <i data-lucide="plus"></i>
+                    </button>
+                </div>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ASSISTENTE IA -->
+
+<section class="assistant-section" id="assistente">
+
+    <div class="assistant-intro">
+
+        <span class="eyebrow">GLOWLY INTELLIGENCE</span>
+
+        <h2>Conhecimento e cuidado, sempre contigo.</h2>
+
+        <p>
+            O nosso assistente virtual ajuda-te a esclarecer
+            dúvidas e a compreender melhor a tua rotina.
+        </p>
+
+    </div>
+
+    <div class="assistant-box">
+
+        <div class="assistant-header">
+            <div class="assistant-icon">
+                <i data-lucide="sparkles"></i>
+            </div>
+
+            <div>
+                <h3>Assistente Glowly</h3>
+                <span>Assistente virtual</span>
+            </div>
+        </div>
+
+        <p class="assistant-question">Como podemos ajudar?</p>
+
+        <button class="question" onclick="responder('Tenho pele oleosa, o que devo usar?')">
+            Tenho pele oleosa, o que devo usar?
+            <i data-lucide="arrow-up-right"></i>
+        </button>
+
+        <button class="question" onclick="responder('Posso combinar vários produtos?')">
+            Posso combinar vários produtos?
+            <i data-lucide="arrow-up-right"></i>
+        </button>
+
+        <button class="question" onclick="responder('Como faço a minha rotina de manhã?')">
+            Como faço a minha rotina de manhã?
+            <i data-lucide="arrow-up-right"></i>
+        </button>
+
+        <button class="question" onclick="responder('Que produtos usar para pele sensível?')">
+            Que produtos usar para pele sensível?
+            <i data-lucide="arrow-up-right"></i>
+        </button>
+
+        <div id="resposta" aria-live="polite"></div>
+
+        <div class="chat">
+            <input id="pergunta" type="text" placeholder="Escreve a tua pergunta..." aria-label="Escreve a tua pergunta" onkeydown="if(event.key === 'Enter') enviar()">
+
+            <button onclick="enviar()" aria-label="Enviar pergunta">
+                <i data-lucide="send"></i>
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ÁREA PESSOAL -->
+
+<section class="personal-section" id="conta">
+
+    <div class="personal-content">
+
+        <span class="eyebrow">A TUA EXPERIÊNCIA GLOWLY</span>
+
+        <h2>Um espaço pensado para ti.</h2>
+
+        <p>
+            Acede à tua área pessoal e acompanha tudo
+            o que faz parte da tua experiência Glowly.
+        </p>
+
+        <a href="#acompanhar" class="primary-btn">
+            Aceder à minha conta
+            <i data-lucide="arrow-right"></i>
+        </a>
+
+    </div>
+
+    <div class="personal-features">
+
+        <article>
+            <i data-lucide="user-round"></i>
+            <h3>Perfil pessoal</h3>
+            <p>Os teus dados e preferências.</p>
+        </article>
+
+        <article>
+            <i data-lucide="heart"></i>
+            <h3>A minha rotina</h3>
+            <p>Os cuidados recomendados para ti.</p>
+        </article>
+
+        <article>
+            <i data-lucide="history"></i>
+            <h3>Histórico</h3>
+            <p>As tuas análises e compras.</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ACOMPANHAMENTO DE ENCOMENDAS -->
+
+<section class="tracking-section" id="acompanhar">
+
+    <div class="tracking-heading">
+
+        <span class="eyebrow">ACOMPANHAMENTO</span>
+
+        <h2>A tua encomenda, sempre por perto.</h2>
+
+        <p>
+            Consulta o estado da tua compra de forma simples
+            e acompanha cada etapa até à entrega.
+        </p>
+
+    </div>
+
+    <div class="tracking-box">
+
+        <div class="tracking-icon">
+            <i data-lucide="package-search"></i>
+        </div>
+
+        <h3>Acompanhar encomenda</h3>
+
+        <p>
+            Introduz o número da tua encomenda para consultar
+            o respetivo estado.
+        </p>
+
+        <form id="trackingForm">
+
+            <input
+                type="text"
+                id="orderNumber"
+                placeholder="Ex.: GLW-2026-001"
+                required
+                aria-label="Número da encomenda"
+            >
+
+            <button type="submit" class="primary-btn">
+                Consultar estado
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </form>
+
+        <div id="trackingResult" aria-live="polite"></div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer" id="sobre">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <a href="#inicio" class="logo">Glowly<span>.</span></a>
+
+            <p>
+                A beleza de cuidar de ti.
+                Uma experiência de skincare pensada para cada mulher.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Explorar</h4>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#como">A nossa filosofia</a>
+        </div>
+
+        <div class="footer-links">
+            <h4>Área de cliente</h4>
+            <a href="#conta">A minha conta</a>
+            <a href="#acompanhar">Acompanhar encomenda</a>
+            <a href="#assistente">Ajuda</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 Glowly. Todos os direitos reservados.</span>
+        <span>Beleza, confiança e autenticidade.</span>
+    </div>
+
+</footer>
+
+
+<!-- CARRINHO -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras">
+
+    <div class="cart-header">
+
+        <div>
+            <h2>O teu carrinho</h2>
+            <p id="cartSubtitle">0 produtos selecionados</p>
+        </div>
+
+        <button id="closeCart" aria-label="Fechar carrinho">
+            <i data-lucide="x"></i>
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems" aria-live="polite"></div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+            <strong>Total</strong>
+            <strong id="cartTotal">0,00 €</strong>
+        </div>
+
+        <button class="checkout-btn" id="checkoutBtn" disabled>
+            Finalizar compra
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+        <p class="cart-note">Obrigada por escolheres a Glowly.</p>
+
+    </div>
+
+</aside>
+
+
+<script src="script.js"></script>
+
+<script>
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+</script>
+
+</body>
+</html>
